@@ -1,7 +1,4 @@
-!/usr/bin/python3
-# 12-fizzbuzz.py
-
-
+#!/usr/bin/python3
 def fizzbuzz():
     for digit in range(1, 101):
         if digit % 3 == 0 and digit % 5 == 0:
