@@ -1,6 +1,6 @@
 if __name__ == "__main__":
     import sys
-    count = len(sys.argv) - 1
+    counter = len(sys.argv) - 1
     if counter == 0:
         print("0 arguments.")
     elif counter == 1:
