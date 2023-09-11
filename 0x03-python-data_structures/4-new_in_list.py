@@ -5,4 +5,3 @@ def new_in_list(my_list, idx, element):
     copy_of_original = [x for x in my_list]
     copy_of_original[idx] = element
     return (copy_of_original)
-
