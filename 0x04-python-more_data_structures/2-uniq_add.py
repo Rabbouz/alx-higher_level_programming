@@ -6,4 +6,4 @@ def uniq_add(my_list=[]):
 
     for itr in uniq_lst:
         num += itr
-        return (num)
+    return (num)
