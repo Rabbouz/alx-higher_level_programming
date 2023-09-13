@@ -17,8 +17,8 @@ def roman_to_int(roman_string):
     if not isinstance(roman_string, str):
         return 0
 
-    rom_numbers = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-    list_keys = list(rom_numbers.keys())
+    rom_n = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    list_keys = list(rom_n.keys())
 
     number = 0
     last_rom = 0
@@ -27,13 +27,13 @@ def roman_to_int(roman_string):
     for itr in roman_string:
         for r_num in list_keys:
             if r_num == itr:
-                if rom_numbers.get(itr) <= last_rom:
+                if rom_n.get(itr) <= last_rom:
                     num += subtract(list_numbers)
-                    list_numbers = [rom_numbers.get(itr)]
+                    list_numbers = [rom_n.get(itr)]
                 else:
-                    list_numbers.append(rom_numbers.get(itr))
+                    list_numbers.append(rom_n.get(itr))
 
-                last_rom = rom_numbers.get(itr)
+                last_rom = rom_n.get(itr)
 
     number += subtract(list_numbers)
 
