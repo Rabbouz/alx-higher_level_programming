@@ -2,7 +2,7 @@
 """Defning a text file(reading) function"""
 
 
-def write_file(filename="", text=""):
+def append_write(filename="", text=""):
     """Appending a string at the end of text file.
 
     Args:
