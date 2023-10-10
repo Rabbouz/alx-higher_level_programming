@@ -9,6 +9,6 @@ def __init__(self, size):
     Args:
     size (int): The size of the new square.
     """
-    self.size = ("size", size)
     self.integer_validator(size)
+    super().__init__(size, size)
     self.__size = size
