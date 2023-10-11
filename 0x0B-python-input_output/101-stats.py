@@ -12,8 +12,8 @@ def print_stats(size, status_codes):
     """Printing accumulated metrics.
 
     Args:
-        size : The accumulated read file size.
-        status_codes : The accumulated count of status codes.
+        size: The accumulated read file size.
+        status_codes: The accumulated count of status codes.
     """
     print("File size: {}".format(size))
     for key in sorted(status_codes):
@@ -57,3 +57,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print_stats(size, status_codes)
         raise
+    
