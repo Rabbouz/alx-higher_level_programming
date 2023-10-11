@@ -2,16 +2,16 @@
 """Reading from standard input and computing metrics."""
 
 
-def print_stats(size, status_codes):
+def print_stats(size, s_codes):
     """Printing accumulated metrics.
 
     Args:
         size: The accumulated read file size.
-        status_codes: The accumulated count of status codes.
+        s_codes: The accumulated count of status codes.
     """
     print("File size: {}".format(size))
-    for key in sorted(status_codes):
-        print("{}: {}".format(key, status_codes[key]))
+    for key in sorted(s_codes):
+        print("{}: {}".format(key, s_codes[key]))
 
 
 if __name__ == "__main__":
