@@ -13,7 +13,7 @@ class Student:
                 all(type(ele) == str for ele in attrs)):
             return {s: getattr(self, s) for s in attrs if hasattr(self, s)}
         return self.__dict__
-    
+
     def reload_from_json(self, json):
         for s, d in json.items():
             setattr(self, s, d)
