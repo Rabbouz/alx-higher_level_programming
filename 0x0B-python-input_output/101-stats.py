@@ -2,33 +2,33 @@
 """Reading from standard input and computing metrics."""
 
 
-def print_stats(size, s_codes):
+def print_stats(size, status_codes):
     """Printing accumulated metrics.
 
     Args:
-        size: The accumulated read file size.
-        s_codes: The accumulated count of status codes.
+        size (int): The accumulated read file size.
+        status_codes (dict): The accumulated count of status codes.
     """
     print("File size: {}".format(size))
-    for key in sorted(s_codes):
-        print("{}: {}".format(key, s_codes[key]))
+    for key in sorted(status_codes):
+        print("{}: {}".format(key, status_codes[key]))
 
 
 if __name__ == "__main__":
     import sys
 
     size = 0
-    s_codes = {}
-    v_codes = ['200', '301', '400', '401', '403', '404', '405', '500']
-    counter = 0
+    status_codes = {}
+    valid_codes = ['200', '301', '400', '401', '403', '404', '405', '500']
+    count = 0
 
     try:
         for line in sys.stdin:
-            if counter == 10:
-                print_stats(size, s_codes)
-                counter = 1
+            if count == 10:
+                print_stats(size, status_codes)
+                count = 1
             else:
-                counter += 1
+                count += 1
 
             line = line.split()
 
@@ -38,16 +38,16 @@ if __name__ == "__main__":
                 pass
 
             try:
-                if line[-2] in v_codes:
-                    if s_codes.get(line[-2], -1) == -1:
-                        s_codes[line[-2]] = 1
+                if line[-2] in valid_codes:
+                    if status_codes.get(line[-2], -1) == -1:
+                        status_codes[line[-2]] = 1
                     else:
-                        s_codes[line[-2]] += 1
+                        status_codes[line[-2]] += 1
             except IndexError:
                 pass
 
-        print_stats(size, s_codes)
+        print_stats(size, status_codes)
 
     except KeyboardInterrupt:
-        print_stats(size, s_codes)
+        print_stats(size, status_codes)
         raise
