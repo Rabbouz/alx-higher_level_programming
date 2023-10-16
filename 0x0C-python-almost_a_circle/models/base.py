@@ -9,7 +9,7 @@ import turtle
 class Base:
     """Base model.
 
-    This Represents the "base" for all other classes in project 0x0C*.
+    It Represents the "base" for all other classes in project 0x0C*.
 
     Private Class Attributes:
         __nb_object (int): Number of instantiated Bases.
@@ -42,7 +42,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Writing the JSON serialization of a list of objects to a file.
+        """Writing JSON serialization of a list of objects to a file.
 
         Args:
             list_objs (list): A list of inherited Base instances.
@@ -71,7 +71,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Returning a class instantied from a dictionary of attributes.
+        """Returning a class instantied from dictionary of attributes.
 
         Args:
             **dictionary (dict): Key/value pairs of attributes to initialize.
@@ -86,7 +86,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """Returning a list of classes instantiated from a file of JSON strings.
+        """Returning a list of classes from a file of JSON strings.
 
         Reads from `<cls.__name__>.json`.
 
@@ -104,7 +104,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """Writing the CSV serialization of a list of objects to a file.
+        """Writing CSV serialization of a list of objects to a file.
 
         Args:
             list_objs (list): A list of inherited Base instances.
