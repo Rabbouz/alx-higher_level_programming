@@ -1,26 +1,27 @@
 #!/usr/bin/python3
 
-
+"""Defining a base model class."""
 import json
 import csv
 import turtle
 
 
-
 class Base:
-    """Base class.
-    The 'base' class is represented as a parent for all other classes in this project
+    """Base model.
 
-    Private class attribute:
-    __nb_object(int): instantiated Bases
+    It Represents the "base" for all other classes in project the project*.
+
+    Private Class Attributes included:
+        __nb_object (int): The number of instantiated Bases.
     """
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Initializing the base
-        args:
-        id(int): identity of the bew base
+        """Initializing a new Base.
+
+        Args:
+            id (int): identity of the new Base.
         """
         if id is not None:
             self.id = id
@@ -56,13 +57,13 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """Returning deserialization of a JSON string.
+        """Returning the deserialization of a JSON string.
 
         Args:
             json_string (str): The JSON str representation of a list of dicts.
         Returns:
             If json_string is None or empty - an empty list.
-            Otherwise, the Python list represented by json_string.
+            Otherwise - the Python list represented by json_string.
         """
         if json_string is None or json_string == "[]":
             return []
@@ -103,10 +104,10 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """Writing CSV serialization of a list of objects to a file.
+        """Writing the CSV serialization of a list of objects to a file.
 
         Args:
-            list_objs (list): The list of inherited Base instances.
+            list_objs (list): A list of inherited Base instances.
         """
         filename = cls.__name__ + ".csv"
         with open(filename, "w", newline="") as csvfile:
@@ -129,7 +130,7 @@ class Base:
 
         Returns:
             If the file does not exist - an empty list.
-            Otherwise, a list of instantiated classes.
+            Otherwise - a list of instantiated classes.
         """
         filename = cls.__name__ + ".csv"
         try:
@@ -150,8 +151,8 @@ class Base:
         """Drawing Rectangles and Squares using the turtle module.
 
         Args:
-            list_rectangles (list): The list of Rectangle objects to draw.
-            list_squares (list): The list of Square objects to draw.
+            list_rectangles (list): A list of Rectangle objects to draw.
+            list_squares (list): A list of Square objects to draw.
         """
         turt = turtle.Turtle()
         turt.screen.bgcolor("#b7312c")
