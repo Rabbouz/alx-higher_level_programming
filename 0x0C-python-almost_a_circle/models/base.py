@@ -9,7 +9,7 @@ import turtle
 class Base:
     """Base model.
 
-    It Represents the "base" for all other classes in project the project*.
+    It Represents the "base" for all other classes in project.
 
     Private Class Attributes included:
         __nb_object (int): The number of instantiated Bases.
