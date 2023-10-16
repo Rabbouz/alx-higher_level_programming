@@ -9,10 +9,10 @@ import turtle
 class Base:
     """Base model.
 
-    It Represents the "base" for all other classes in project 0x0C*.
+    This Represents the "base" for all other classes in project 0x0C*.
 
-    Private Class Attributes :
-        __nb_object (int): The number of instantiated Bases.
+    Private Class Attributes:
+        __nb_object (int): Number of instantiated Bases.
     """
 
     __nb_objects = 0
@@ -21,7 +21,7 @@ class Base:
         """Initializing a new Base.
 
         Args:
-            id (int): identity of the new Base.
+            id (int): The identity of the new Base.
         """
         if id is not None:
             self.id = id
@@ -31,7 +31,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Returning JSON serialization of a list of dicts.
+        """Returning the JSON serialization of a list of dicts.
 
         Args:
             list_dictionaries (list): A list of dictionaries.
@@ -42,10 +42,10 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Writing JSON serialization of a list of objects to a file.
+        """Writing the JSON serialization of a list of objects to a file.
 
         Args:
-            list_objs (list): The list of inherited Base instances.
+            list_objs (list): A list of inherited Base instances.
         """
         filename = cls.__name__ + ".json"
         with open(filename, "w") as jsonfile:
@@ -60,7 +60,7 @@ class Base:
         """Returning the deserialization of a JSON string.
 
         Args:
-            json_string (str): The JSON str representation of a list of dicts.
+            json_string (str): A JSON str representation of a list of dicts.
         Returns:
             If json_string is None or empty - an empty list.
             Otherwise - the Python list represented by json_string.
